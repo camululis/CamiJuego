@@ -39,9 +39,9 @@ public class Arrow : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Enemy enemy = collision.GetComponent<Enemy>();
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
             DestroyArrow();

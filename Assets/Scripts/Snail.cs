@@ -19,6 +19,7 @@ public class Snail : Enemy
     public override void TakeDamage(int dmg)
     {
         base.TakeDamage(dmg);
+        Debug.Log("Snail tomo dmg");
     }
 
     protected override void Attack(GameObject target)

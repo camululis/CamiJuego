@@ -4,19 +4,19 @@ public class FollowAI : MonoBehaviour
 {
     [SerializeField] private Transform player;
 
-    private bool isFacingRight = true;
+    private bool isFacingLeft = true;
 
     void Update()
     {
-        bool isPlayerRight = transform.position.x < player.transform.position.x;
-        Flip(isPlayerRight);
+        bool isPlayerLeft = transform.position.x > player.transform.position.x;
+        Flip(isPlayerLeft);
     }
 
-    private void Flip(bool isPlayerRight)
+    private void Flip(bool isPlayerLeft)
     {
-        if((isFacingRight && !isPlayerRight) || (!isFacingRight && isPlayerRight))
+        if((isFacingLeft && !isPlayerLeft) || (!isFacingLeft && isPlayerLeft))
         {
-            isFacingRight = !isFacingRight;
+            isFacingLeft = !isFacingLeft;
             Vector3 scale = transform.localScale;
             scale.x *= -1;
             transform.localScale = scale;

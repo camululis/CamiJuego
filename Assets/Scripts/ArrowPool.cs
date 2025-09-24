@@ -36,8 +36,10 @@ public class ArrowPool : MonoBehaviour
         {
             GameObject arrowObj = Instantiate(arrowPrefab);
             arrowObj.SetActive(false);
+
             Arrow arrow = arrowObj.GetComponent<Arrow>();
             arrowList.Add(arrow);
+            
             arrowObj.transform.parent = transform;
         }
     }
